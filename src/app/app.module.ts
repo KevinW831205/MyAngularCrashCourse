@@ -6,13 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataEventsComponent } from './data-events/data-events.component';
 import { MyPipePipe } from './data-events/my-pipe.pipe';
+import { DirectivesComponent } from './directives/directives.component';
+import { HttpServicesComponent } from './http-services/http-services.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DataEventsComponent,
-    MyPipePipe
+    MyPipePipe,
+    DirectivesComponent,
+    HttpServicesComponent
   ],
   imports: [
     BrowserModule,

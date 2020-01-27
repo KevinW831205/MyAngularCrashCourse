@@ -5,7 +5,7 @@
 * Data and Events
 * Directives
 * Forms
-* Services
+* HttpServices
 * Routing
 * __Reusable Components
 * __AngularBootstrap
@@ -15,7 +15,7 @@
 * Angular layout
 * components
 * template
-* directives
+* directives intro
 * servces
     * Dependency Injection
 
@@ -34,13 +34,33 @@
 
 ### Twoway binding
 * [(ngModel)] from FormsModule
-
-
 ### Pipes
 
 
 
 
+## Directives
+* ngIf
+    * Hidden Property
+* ngFor
+    * index
+    * isEven
+* ngClass
+* ngSwitchCase
+
+# HttpServices
+* HttpClient
+* CRUD
+* rxjs Observable
+* onInit
+* error handling
 
 
-## Reusable Components
+## Routing
+
+
+
+
+
+
+

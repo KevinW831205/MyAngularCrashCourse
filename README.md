@@ -33,7 +33,7 @@
 * template variables: "#"
 
 ### Twoway binding
-* [(ngModel)]
+* [(ngModel)] from FormsModule
 
 
 ### Pipes

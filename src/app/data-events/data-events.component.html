@@ -1,0 +1,20 @@
+<h1>Data and Events</h1>
+
+
+<p>{{text}}</p>
+
+<p>image src attribute binding</p>
+<img [src]="imgUrl">
+
+<p [class.my-red]="!someBoolean">class binding</p>
+
+<button (click)="clicking($event)">Event Binding</button>
+<br>
+
+<!-- Remember to import NgForm -->
+<input [(ngModel)]="someField" (keyup.enter)="onKeyUp()"> 
+
+<p>{{someDate | date:"MM/dd/yy"}}</p>
+
+<p>{{someField | myPipe}}</p>
+

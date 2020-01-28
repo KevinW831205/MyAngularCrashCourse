@@ -5,6 +5,7 @@ import { Person } from '../http-services/model/Person';
 import { Observable } from 'rxjs';
 import { AppError } from './Errors/AppError';
 import { NotFoundError } from './Errors/NotFoundError';
+import { BadRequestError } from './Errors/BadRequestError';
 
 
 
@@ -35,7 +36,7 @@ export class PersonService {
 
   put(person): Observable<Person> {
     try {      
-      return this.http.put<Person>(baseUrl + "person-controller/update/" + person.id, JSON.stringify(person), httpOptions)
+      return this.http.put<Person>(baseUrl + "person-controller/update/" + person.id, null, httpOptions)
     } catch (error) {
       this.handleError(error);
     }
@@ -50,6 +51,7 @@ export class PersonService {
   }
 
   private handleError(error: Response) {
+    console.log("service error handling")
     if (error.status === 400) {
       throw(new BadRequestError(error))
     }

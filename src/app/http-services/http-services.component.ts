@@ -48,6 +48,7 @@ export class HttpServicesComponent implements OnInit {
           console.log(res)
         },
         err => {
+          console.log("error in component"+err)
           person.firstName = temp;
         }
       )

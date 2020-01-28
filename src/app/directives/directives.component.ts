@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesComponent implements OnInit {
 
+  numbers;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  removeNumbers(){
+    this.numbers = null;
+  }
+
+  populateNumbers(){
+    this.numbers = [1,2,3,4,5,6]
   }
 
 }

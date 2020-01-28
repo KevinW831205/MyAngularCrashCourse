@@ -1,1 +1,8 @@
-<p>directives works!</p>
+<h1>Directives</h1>
+<button (click)="populateNumbers()">Populate Numbers</button> <button (click)="removeNumbers()">remove Numbers</button>
+<ul *ngIf="numbers; else noNumbers">
+    <li *ngFor="let number of numbers">{{number}}</li>
+</ul>
+<ng-template #noNumbers>
+    <p>No Numbers Here</p>
+</ng-template>

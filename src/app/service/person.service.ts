@@ -51,7 +51,7 @@ export class PersonService {
 
   private handleError(error: Response) {
     if (error.status === 400) {
-      throw(new AppError(error))
+      throw(new BadRequestError(error))
     }
     if (error.status === 404) {
       throw(new NotFoundError(error))

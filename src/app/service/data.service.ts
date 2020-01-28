@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AppError } from './Errors/AppError';
 import { NotFoundError } from './Errors/NotFoundError';
 import { Person } from '../http-services/model/Person';
+import { BadRequestError } from './Errors/BadRequestError';
 
 
 
@@ -70,7 +71,7 @@ export class DataService<dataType> {
 
   private handleError(error: Response) {
     if (error.status === 400) {
-      throw(new AppError(error))
+      throw(new BadRequestError(error))
     }
     if (error.status === 404) {
       throw(new NotFoundError(error))

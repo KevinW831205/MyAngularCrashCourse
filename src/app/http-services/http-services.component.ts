@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { PersonService } from '../service/person.service';
+import { Person } from './model/Person';
 
 @Component({
   selector: 'app-http-services',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HttpServicesComponent implements OnInit {
 
-  constructor() { }
+  persons;
+
+  constructor(private personService: PersonService) {
+  }
 
   ngOnInit() {
+    this.personService.getAll()
+      .subscribe(res=>this.persons=res);
   }
 
 }

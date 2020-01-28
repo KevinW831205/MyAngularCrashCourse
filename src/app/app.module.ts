@@ -8,6 +8,8 @@ import { DataEventsComponent } from './data-events/data-events.component';
 import { MyPipePipe } from './data-events/my-pipe.pipe';
 import { DirectivesComponent } from './directives/directives.component';
 import { HttpServicesComponent } from './http-services/http-services.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PersonService } from './service/person.service';
 
 
 @NgModule({
@@ -21,9 +23,10 @@ import { HttpServicesComponent } from './http-services/http-services.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

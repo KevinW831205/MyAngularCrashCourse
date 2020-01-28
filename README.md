@@ -49,6 +49,7 @@
 * ngSwitchCase
 
 # HttpServices
+* HttpClientModule
 * HttpClient
 * CRUD
 * rxjs Observable

@@ -21,7 +21,6 @@ export class PersonService {
   }
 
   post(person) {
-    console.log("url",baseUrl + "person-controller/create")
     console.log(JSON.stringify(person))
     try {
       return this.http.post(baseUrl + "person-controller/create", person)
@@ -30,9 +29,19 @@ export class PersonService {
     }
   }
 
-  put(person){
+  put(person) {
+    try {      
+      return this.http.put(baseUrl + "person-controller/update/" + person.id, JSON.stringify(person), httpOptions)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  delete(id){
     try{
-      return this.http.put(baseUrl+"person-controller/"+person.id,person)
+      return this.http.delete(baseUrl+"person-controller/delete/"+id)
+    } catch(error){
+      console.log(error)
     }
   }
 

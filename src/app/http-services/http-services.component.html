@@ -4,5 +4,7 @@
 <ul *ngFor="let person of persons" >
     <li>{{person.firstName}} {{person.lastName}}</li>
     <button (click)="changeFirstName(person)">update</button>
+    <button (click)="deletePerson(person.id)">delete</button>
+
 </ul>
 <button (click)="createPerson()"> create person</button>

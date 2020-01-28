@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { AppError } from './Errors/AppError';
 import { NotFoundError } from './Errors/NotFoundError';
 import { BadRequestError } from './Errors/BadRequestError';
+import { catchError, tap } from 'rxjs/operators';
 
 
 

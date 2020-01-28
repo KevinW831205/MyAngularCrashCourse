@@ -7,6 +7,7 @@
 * Forms
 * HttpServices
 * Routing
+* Authentication Authorization
 * __Reusable Components
 * __AngularBootstrap
 
@@ -34,10 +35,10 @@
 
 ### Twoway binding
 * [(ngModel)] from FormsModule
+
 ### Pipes
-
-
-
+* angular pipes [https://angular.io/api?type=pipe](https://angular.io/api?type=pipe)
+* custom pipes
 
 ## Directives
 * ngIf
@@ -58,6 +59,21 @@
 
 
 ## Routing
+* basic config
+* router-outlet
+* routerLink
+* route params
+* query params
+
+## Forms
+### Template-driven
+
+### Reactive
+
+
+
+
+
 
 
 

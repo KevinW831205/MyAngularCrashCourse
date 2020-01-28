@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl, httpOptions } from './httpConfig'
+import { Person } from '../http-services/model/Person';
+import { Observable } from 'rxjs';
+import { AppError } from './Errors/AppError';
+import { NotFoundError } from './Errors/NotFoundError';
 
 
 
@@ -12,36 +16,45 @@ export class PersonService {
   constructor(private http: HttpClient) {
   }
 
-  getAll() {
+  getAll(): Observable<Person[]> {
     try {
-      return this.http.get(baseUrl + "person-controller/read-all");
+      return this.http.get<Person[]>(baseUrl + "person-controller/read-all");
     } catch (error) {
-      console.log(error)
+      this.handleError(error);
     }
   }
 
-  post(person) {
+  post(person): Observable<Person> {
     console.log(JSON.stringify(person))
     try {
-      return this.http.post(baseUrl + "person-controller/create", person)
+      return this.http.post<Person>(baseUrl + "person-controller/create", person)
     } catch (error) {
-      console.log(error)
+      this.handleError(error);
     }
   }
 
-  put(person) {
+  put(person): Observable<Person> {
     try {      
-      return this.http.put(baseUrl + "person-controller/update/" + person.id, JSON.stringify(person), httpOptions)
+      return this.http.put<Person>(baseUrl + "person-controller/update/" + person.id, JSON.stringify(person), httpOptions)
     } catch (error) {
-      console.log(error);
+      this.handleError(error);
     }
   }
 
-  delete(id){
+  delete(id) : Observable<Person>{
     try{
-      return this.http.delete(baseUrl+"person-controller/delete/"+id)
+      return this.http.delete<Person>(baseUrl+"person-controller/delete/"+id)
     } catch(error){
-      console.log(error)
+      this.handleError(error);
+    }
+  }
+
+  private handleError(error: Response) {
+    if (error.status === 400) {
+      throw(new AppError(error))
+    }
+    if (error.status === 404) {
+      throw(new NotFoundError(error))
     }
   }
 

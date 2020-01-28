@@ -10,7 +10,7 @@ import { Person } from './model/Person';
 })
 export class HttpServicesComponent implements OnInit {
 
-  persons;
+  persons: Person[];
 
   constructor(private personService: PersonService) {
   }
@@ -65,7 +65,7 @@ export class HttpServicesComponent implements OnInit {
   }
 
   handleErrors(error){
-    
+
   }
 
 }

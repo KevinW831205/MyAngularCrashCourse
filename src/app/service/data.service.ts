@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { AppError } from './Errors/AppError';
+import { NotFoundError } from './Errors/NotFoundError';
+import { Person } from '../http-services/model/Person';
 
 
 
@@ -16,49 +19,49 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService<dataType> {
 
 
   constructor(private http: HttpClient, private url) { }
 
 
 
-  getAll() {
+  getAll(): Observable<dataType[]> {
     try {
-      return this.http.get(this.url, httpOptions);
+      return this.http.get<dataType[]>(this.url, httpOptions);
     } catch (error) {
       this.handleError(error);
     }
   }
 
-  get(id) {
+  get(id): Observable<dataType> {
     try {
-      return this.http.get(this.url + '/' + id);
+      return this.http.get<dataType>(this.url + '/' + id);
     } catch (error) {
       this.handleError(error);
     }
   }
 
 
-  create(resource) {
+  create(resource): Observable<dataType> {
     try {
-      return this.http.post(this.url, JSON.stringify(resource));
+      return this.http.post<dataType>(this.url, JSON.stringify(resource));
     } catch (error) {
       this.handleError(error);
     }
   }
 
-  update(resource) {
+  update(resource): Observable<dataType> {
     try {
-      this.http.patch(this.url + "/" + resource.id, JSON.stringify(resource));
+      return this.http.patch<dataType>(this.url + "/" + resource.id, JSON.stringify(resource));
     } catch (error) {
       this.handleError(error);
     }
   }
 
-  delete(id) {
+  delete(id): Observable<dataType> {
     try {
-      return this.http.delete(this.url + "/" + id);
+      return this.http.delete<dataType>(this.url + "/" + id);
     } catch (error) {
       this.handleError(error);
     }
@@ -67,8 +70,10 @@ export class DataService {
 
   private handleError(error: Response) {
     if (error.status === 400) {
+      throw(new AppError(error))
     }
     if (error.status === 404) {
+      throw(new NotFoundError(error))
     }
   }
 

@@ -1,3 +1,8 @@
 <!-- use myfirstmonolith server for this -->
 
-<p>http-services works!</p>
+
+<ul *ngFor="let person of persons" >
+    <li>{{person.firstName}} {{person.lastName}}</li>
+    <button (click)="changeFirstName(person)">update</button>
+</ul>
+<button (click)="createPerson()"> create person</button>

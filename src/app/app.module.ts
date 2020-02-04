@@ -10,6 +10,10 @@ import { DirectivesComponent } from './directives/directives.component';
 import { HttpServicesComponent } from './http-services/http-services.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonService } from './service/person.service';
+import { Page1Component } from './routingDemo/page1/page1.component';
+import { Page2Component } from './routingDemo/page2/page2.component';
+import { NavComponent } from './routingDemo/nav/nav.component';
+import { HomeComponent } from './routingDemo/home/home.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { PersonService } from './service/person.service';
     DataEventsComponent,
     MyPipePipe,
     DirectivesComponent,
-    HttpServicesComponent
+    HttpServicesComponent,
+    Page1Component,
+    Page2Component,
+    NavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

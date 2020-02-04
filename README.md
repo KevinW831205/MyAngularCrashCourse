@@ -65,6 +65,7 @@
 * route params
 * query params
 * route guards
+    * canActivate
 
 ## Forms
 ### Template-driven

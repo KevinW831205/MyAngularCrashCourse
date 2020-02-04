@@ -14,7 +14,12 @@ export class RouterGuardService implements CanActivate {
   constructor(private router: Router) { }
 
   canActivate() {
-    return this.user.isAdmin;
+    if(this.user.isAdmin){
+      return true;
+    } else {
+      this.router.navigate(["home"])
+      return false;
+    }
   }
 
   toggleAdmin(){

@@ -16,6 +16,7 @@ import { NavComponent } from './routingDemo/nav/nav.component';
 import { HomeComponent } from './routingDemo/home/home.component';
 import { RouterGuardService } from './service/router-guard.service';
 import { AdminComponent } from './routingDemo/admin/admin.component';
+import { PageComponent } from './routingDemo/page/page.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AdminComponent } from './routingDemo/admin/admin.component';
     Page2Component,
     NavComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

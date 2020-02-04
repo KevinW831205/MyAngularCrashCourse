@@ -7,7 +7,12 @@
 <!-- <app-http-services></app-http-services> -->
 
 
-<!-- routingDemo needs these two -->
+<!-- routingDemo needs these components -->
+<div>
+<button (click)="toggleAdmin()">Toggle Admin</button>
+Currently isAdmin: {{isAdmin}}
+</div>
+
 <app-nav></app-nav>
 <router-outlet></router-outlet>
 <!-- End routingDemo -->

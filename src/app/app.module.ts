@@ -14,6 +14,8 @@ import { Page1Component } from './routingDemo/page1/page1.component';
 import { Page2Component } from './routingDemo/page2/page2.component';
 import { NavComponent } from './routingDemo/nav/nav.component';
 import { HomeComponent } from './routingDemo/home/home.component';
+import { RouterGuardService } from './service/router-guard.service';
+import { AdminComponent } from './routingDemo/admin/admin.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { HomeComponent } from './routingDemo/home/home.component';
     Page1Component,
     Page2Component,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { HomeComponent } from './routingDemo/home/home.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [PersonService],
+  providers: [PersonService, RouterGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

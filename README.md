@@ -64,11 +64,18 @@
 * routerLink
 * route params
 * query params
+* route guards
 
 ## Forms
 ### Template-driven
 
 ### Reactive
+
+## Reuseable Components
+* @Input
+* @Output
+* ngContent
+* ngContainer
 
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -20,6 +20,14 @@ export class ReactiveFormsComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  get username(){
+    return this.form.get('username').value;
+  }
+
+
+
+
 
   
 }

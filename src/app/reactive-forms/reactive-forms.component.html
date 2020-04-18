@@ -1,1 +1,14 @@
-<p>reactive-forms works!</p>
+<!-- Remember to import reactiveFormsModule in app module-->
+<form [formGroup]="form">  
+    <div>
+        <label for="username">username</label>
+        <input id="username" formControlName="username">
+    </div>
+
+    <div>
+        <label for="password">password</label>
+        <input id="password" formControlName="password">
+    </div>
+</form>
+
+<p></p>

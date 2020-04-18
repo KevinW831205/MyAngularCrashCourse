@@ -17,6 +17,7 @@ import { HomeComponent } from './routingDemo/home/home.component';
 import { RouterGuardService } from './service/router-guard.service';
 import { AdminComponent } from './routingDemo/admin/admin.component';
 import { PageComponent } from './routingDemo/page/page.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PageComponent } from './routingDemo/page/page.component';
     NavComponent,
     HomeComponent,
     AdminComponent,
-    PageComponent
+    PageComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,

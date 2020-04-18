@@ -1,7 +1,7 @@
 <!-- Remember to import reactiveFormsModule in app module-->
 <form [formGroup]="form">  
     <div>
-        <label for="username">username</label>
+        <label for="username">username (only this is required)</label>
         <input id="username" formControlName="username">
     </div>
 
@@ -26,3 +26,4 @@
 
 <p>username value: {{username}}</p>
 <p>username value: {{form.get('password').value}}</p>
+<p>form isvalid: {{form.valid}}</p>
